@@ -37,6 +37,9 @@ template '/etc/fail2ban/jail.local' do
   owner 'root'
   group 'root'
   mode 0644
+  variables(
+    :config => node['fail2ban']
+  )
   notifies :restart, 'service[fail2ban]'
 end
 
