@@ -91,7 +91,7 @@ action = %(<%= node['fail2ban']['action'] %>)s
 # action, port, logpath, etc) in that section within jail.local
 
 
-<% @node['fail2ban']['services'].each do |service, param| %>
+<% @config['services'].each do |service, param| %>
 [<%= service %>]
 
 enabled = <%= param['enabled'] %>
